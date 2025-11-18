@@ -13,7 +13,7 @@ public class QuizManager {
 
         list.add(new Question(
                 "Which animal can fly?",
-                new String[]{"Ostrich", "Penguine", "Falk", "Rat"},
+                new String[]{"Ostrich", "Penguin", "Falk", "Rat"},
                 "3"
         ));
 
@@ -40,3 +40,4 @@ public class QuizManager {
         return list;
     }
 }
+// IQuiz som QuizManager implementerar? (Sali kan fixa interfaces?)

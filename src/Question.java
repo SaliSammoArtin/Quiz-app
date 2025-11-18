@@ -1,7 +1,7 @@
 public class Question {
     private String questionText;
     private String[] alternatives;
-    private String correctAnswer;
+    private String correctAnswer; // göra om detta till int, anpassa koden
 
     public Question(String questionText, String[] alternatives, String correctAnswer) {
         this.questionText = questionText;

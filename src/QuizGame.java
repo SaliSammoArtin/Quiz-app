@@ -7,7 +7,7 @@ public class QuizGame {
     public QuizGame(ArrayList<Question> questions) {
         this.questions = questions;
     }
-
+// hämta svaren med index?
     public void startaQuiz() {
         Scanner input = new Scanner(System.in);
         int score = 0;
