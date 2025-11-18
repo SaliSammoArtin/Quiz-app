@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class QuizManager {
 
-    public static ArrayList<Question> createAnimalQuiz() {
-        ArrayList<Question> list = new ArrayList<>();
+    public static ArrayList<IQuestion> createAnimalQuiz() {
+        ArrayList<IQuestion> list = new ArrayList<>();
 
         list.add(new Question(
                 "What is the biggest animal?",
@@ -22,8 +22,8 @@ public class QuizManager {
         return list;
     }
 
-    public static ArrayList<Question> createGeneralQuiz() {
-        ArrayList<Question> list = new ArrayList<>();
+    public static ArrayList<IQuestion> createGeneralQuiz() {
+        ArrayList<IQuestion> list = new ArrayList<>();
 
         list.add(new Question(
                 "The capital of Sweden?",
