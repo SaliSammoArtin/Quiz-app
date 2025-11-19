@@ -19,7 +19,7 @@ public class Main {
         /* This declares that QuizGame exists, but the value is assign according to
         ... what the user chooses */
 
-        QuizGame quiz = QuizSelectHelper.createQuiz();
+        QuizGame quiz = QuizSelectHelper.chooseQuiz();
         quiz.startaQuiz();
     }
 }

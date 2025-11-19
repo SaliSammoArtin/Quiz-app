@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class QuizSelectHelper {
-    public static QuizGame createQuiz() {
+    public static QuizGame chooseQuiz() {
         while (true) {
             Scanner input = new Scanner(System.in);
             String userInput = input.nextLine();
