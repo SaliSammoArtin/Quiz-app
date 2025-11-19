@@ -1,12 +1,5 @@
 import java.util.Scanner;
 
-// Kolla upp hur mapstruktur kan se ut
-// Någon får göra om int i Question - Leo
-// Någon kan iterera flera frågor till varje quiz. - Sali
-// Sali kollar upp kring interfaces
-// Enum - Desiree
-
-//Sali kollar om det går att hämta svaren med index?
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -23,23 +16,18 @@ public class Main {
         /* This declares that QuizGame exists, but the value is assign according to
         ... what the user chooses */
 
-        QuizGame quiz = null;
-
         //OOP this? Gör main så liten så möjligt - Ekaterin//a
-        switch (choice) {
-            case 1:
-                quiz = new QuizGame(QuizManager.createAnimalQuiz());
-                break;
-            case 2:
-                quiz = new QuizGame(QuizManager.createGeneralQuiz());
-                break;
-            default:
-                System.out.println("Wrong choice!");
-                return;
+        IQuiz quiz;
+
+        if (choice == 1) {
+            quiz = new QuizGame(QuizManager.createAnimalQuiz());
+        } else if (choice == 2) {
+            quiz = new QuizGame(QuizManager.createGeneralQuiz());
+        } else {
+            System.out.println("Invalid choice!");
+            return;
         }
 
-        quiz.startaQuiz();
+        quiz.start();
     }
 }
-// Göra en IQuestion interface som Question klassen kan implementera (Sali kan fixa?)
-// eller ett ICOMMANDS som innehåller olika kommandon, kopplad till en kommando klass

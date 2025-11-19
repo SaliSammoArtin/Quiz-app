@@ -1,20 +1,22 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class QuizGame {
-    private ArrayList<Question> questions;
+public class QuizGame implements IQuiz {
+    private ArrayList<IQuestion> questions;
 
-    public QuizGame(ArrayList<Question> questions) {
+    public QuizGame(ArrayList<IQuestion> questions) {
         this.questions = questions;
     }
-// hämta svaren med index?
-    public void startaQuiz() {
+
+    // hämta svaren med index?
+    @Override
+    public void start() {
         Scanner input = new Scanner(System.in);
         int score = 0;
 
         System.out.println("\n--- Quiz begins! ---\n");
 
-        for (Question q : questions) {
+        for (IQuestion q : questions) {
             q.showQuestion();
             System.out.print("Your answer: ");
             String userAnswer = input.nextLine();
@@ -32,6 +34,6 @@ public class QuizGame {
 
     private void showResult(int score) {
         System.out.println("Quiz done!");
-        System.out.println("You got " + score + " of " + questions.size() + " correct!");
+        System.out.println("You got " + score + " out of " + questions.size() + " correct!");
     }
 }

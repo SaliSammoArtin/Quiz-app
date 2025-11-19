@@ -1,4 +1,4 @@
-public class Question {
+public class Question implements IQuestion {
     private String questionText;
     private String[] alternatives;
     private String correctAnswer; // göra om detta till int, anpassa koden
@@ -9,6 +9,7 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
+    @Override
     public void showQuestion() {
         System.out.println(questionText);
         for (int i = 0; i < alternatives.length; i++) {
@@ -16,10 +17,12 @@ public class Question {
         }
     }
 
+    @Override
     public boolean checkAnswer(String answer) {
         return answer.equalsIgnoreCase(correctAnswer);
     }
 
+    @Override
     public String getCorrectAnswer() {
         return correctAnswer;
     }
