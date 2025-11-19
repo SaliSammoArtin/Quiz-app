@@ -1,9 +1,10 @@
+// src/Question.java
 public class Question implements IQuestion {
-    private String questionText;
-    private String[] alternatives;
-    private String correctAnswer; // göra om detta till int, anpassa koden
+    private final String questionText;
+    private final String[] alternatives;
+    private final int correctAnswer;
 
-    public Question(String questionText, String[] alternatives, String correctAnswer) {
+    public Question(String questionText, String[] alternatives, int correctAnswer) {
         this.questionText = questionText;
         this.alternatives = alternatives;
         this.correctAnswer = correctAnswer;
@@ -18,12 +19,12 @@ public class Question implements IQuestion {
     }
 
     @Override
-    public boolean checkAnswer(String answer) {
-        return answer.equalsIgnoreCase(correctAnswer);
+    public boolean checkAnswer(int answer) {
+        return answer == correctAnswer;
     }
 
     @Override
-    public String getCorrectAnswer() {
+    public int getCorrectAnswer() {
         return correctAnswer;
     }
 }
