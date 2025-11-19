@@ -1,8 +1,9 @@
+// src/QuizGame.java
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class QuizGame implements IQuiz {
-    private ArrayList<IQuestion> questions;
+    private final ArrayList<IQuestion> questions;
 
     public QuizGame(ArrayList<IQuestion> questions) {
         this.questions = questions;
@@ -20,11 +21,16 @@ public class QuizGame implements IQuiz {
             System.out.print("Your answer: ");
             String userAnswer = input.nextLine();
 
-            if (q.checkAnswer(userAnswer)) {
-                System.out.println("✔ Correct!\n");
-                score++;
-            } else {
-                System.out.println("✘ Wrong! The correct answer is: " + q.getCorrectAnswer() + "\n");
+            try {
+                int parsed = Integer.parseInt(userAnswer.trim());
+                if (q.checkAnswer(parsed)) {
+                    System.out.println("✔ Correct!\n");
+                    score++;
+                } else {
+                    System.out.println("✘ Wrong! The correct answer is: " + q.getCorrectAnswer() + "\n");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("✘ Invalid input. The correct answer is: " + q.getCorrectAnswer() + "\n");
             }
         }
 
