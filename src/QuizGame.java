@@ -8,7 +8,6 @@ public class QuizGame implements IQuiz {
         this.questions = questions;
     }
 
-    // hämta svaren med index?
     @Override
     public void start() {
         Scanner input = new Scanner(System.in);

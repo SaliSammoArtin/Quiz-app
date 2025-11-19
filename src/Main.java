@@ -16,7 +16,6 @@ public class Main {
         /* This declares that QuizGame exists, but the value is assign according to
         ... what the user chooses */
 
-        //OOP this? Gör main så liten så möjligt - Ekaterin//a
         IQuiz quiz;
 
         if (choice == 1) {
