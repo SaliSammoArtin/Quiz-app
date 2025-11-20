@@ -1,7 +1,32 @@
-## Definition of Done (DoD)
-För att en issue ska räknas som färdig och flyttas till "Done" måste följande vara uppfyllt:
+---
+## 🛠 Vårt Arbetssätt (Way of Working)
 
-1. [ ] Koden fungerar som tänkt (uppfyller acceptanskriterierna).
-2. [ ] Inga kraschar vid felaktig inmatning.
-3. [ ] Någon annan i gruppen har gjort en code review.
-4. [ ] Koden är uppladdad (pushad) till main-branchen på GitHub. 
+För att hålla hög kvalitet och följa Scrum använder vi följande riktlinjer i projektet.
+
+### 📝 Mall för Issues (User Stories)
+När vi skapar en ny issue använder vi följande format för att säkerställa tydlighet:
+
+> **User Story:**
+> Som **[Roll]** vill jag **[Handling]** för att **[Värde/Syfte]**.
+>
+> **Acceptanskriterier:**
+> - [ ] Kriterium 1 som måste funka
+> - [ ] Kriterium 2 som måste funka
+>
+> **Estimat:** [S/M/L]
+
+### 👕 Estimerings-skala (T-shirt sizing)
+Vi bedömer storleken på uppgifter baserat på ansträngning och komplexitet:
+
+* **S (Small):** Enkel ändring. Tar mindre än 2 timmar.
+* **M (Medium):** En standardfunktion. Tar ca en halv dag.
+* **L (Large):** Komplex funktion. Tar en heldag eller mer.
+    * *OBS:* Om en uppgift är **L** eller **XL**, försök att bryta ner den i mindre delar!
+
+### ✅ Definition of Done (DoD)
+En uppgift är inte klar förrän:
+1.  [ ] Koden uppfyller alla acceptanskriterier.
+3.  [ ] Code Review är gjord av en annan gruppmedlem.
+4.  [ ] Koden är pushad och mergad till `main`.
+
+---
