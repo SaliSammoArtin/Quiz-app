@@ -16,7 +16,7 @@ public enum MainMenu {
     public void print() {
         System.out.println(number + ". " + description);
     }
-    public static void printMenu() {
+    public static void printMainMenu() {
         System.out.println("~~~ QUIZ MENU ~~~");
         for (MainMenu menu : MainMenu.values()) {
             menu.print();
