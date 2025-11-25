@@ -8,7 +8,7 @@ public class QuizSelectHelper {
         This menu can be made better if we Implement Iquiz for Quizes we have, not for the
         QuizGame, and make a getter method for the titles of the quizes. Then program can
          Automatically get titles of quizes and we will not have to get it manually */
-        System.out.println("Choose a quiz:");
+        System.out.println("\nChoose a quiz:");
         System.out.println("1. Animals Quiz");
         System.out.println("2. Sweden cities generic quiz");
         System.out.print("Write the number of your choice: ");
