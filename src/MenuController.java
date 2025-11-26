@@ -27,7 +27,7 @@ public class MenuController {
         String input = scanner.nextLine();
 
         try {
-            int choice = Integer.parseInt(input);
+            int choice = Integer.parseInt(input.trim());
 
             switch (choice) {
                 case 1:
