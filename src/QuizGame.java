@@ -26,6 +26,11 @@ public class QuizGame implements IQuiz {
 
             int userAnswer = getValidIntInput();
 
+            if (userAnswer == -1) {
+                System.out.println("\n Quiz cancelled! Returning to main menu.");
+                return;
+            }
+
             if (q.checkAnswer(userAnswer)) {
                 System.out.println("✔ Correct!\n");
                 score++;
@@ -39,9 +44,12 @@ public class QuizGame implements IQuiz {
 
     private int getValidIntInput() {
         while (true) {
-            System.out.print("Your answer: ");
+            System.out.print("Your answer (1-4) or 'q' to quit: ");
             String input = scanner.nextLine();
 
+            if (input.trim().equalsIgnoreCase("q")) {
+                return -1;
+            }
             try {
                 int parsedInput = Integer.parseInt(input.trim());
 
