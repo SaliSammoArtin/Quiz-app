@@ -1,4 +1,8 @@
-// src/Question.java
+package model;
+
+import interfaces.IQuestion;
+
+// src/model.Question.java
 public class Question implements IQuestion {
     private final String questionText;
     private final String[] alternatives;

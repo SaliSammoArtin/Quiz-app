@@ -1,4 +1,7 @@
-// src/QuizGame.java
+package service;// src/service.QuizGame.java
+import interfaces.IQuestion;
+import interfaces.IQuiz;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,7 +22,7 @@ public class QuizGame implements IQuiz {
         for (int i = 0; i < questions.size(); i++) {
             IQuestion q = questions.get(i);
 
-            System.out.println("Question " + (i + 1) + " of " + questions.size());
+            System.out.println("model.Question " + (i + 1) + " of " + questions.size());
             System.out.println("--------------------");
 
             q.showQuestion();
