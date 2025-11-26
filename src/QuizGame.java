@@ -16,7 +16,12 @@ public class QuizGame implements IQuiz {
 
         System.out.println("\n--- Quiz begins! ---\n");
 
-        for (IQuestion q : questions) {
+        for (int i = 0; i < questions.size(); i++) {
+            IQuestion q = questions.get(i);
+
+            System.out.println("Question " + (i + 1) + " of " + questions.size());
+            System.out.println("--------------------");
+
             q.showQuestion();
             System.out.print("Your answer: ");
             String userAnswer = input.nextLine();
