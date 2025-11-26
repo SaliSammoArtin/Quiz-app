@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MenuController {
-    private Scanner scanner;
+    private final Scanner scanner;
     private boolean running;
 
     public MenuController() {

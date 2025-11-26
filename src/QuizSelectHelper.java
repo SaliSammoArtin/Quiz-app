@@ -16,7 +16,7 @@ public class QuizSelectHelper {
         while (true) {
             Scanner input = new Scanner(System.in);
             String userInput = input.nextLine();
-            int choice = -1;
+            int choice;
             try {
                 choice = Integer.parseInt(userInput.trim()); // try converting to int
             } catch (NumberFormatException e) {
