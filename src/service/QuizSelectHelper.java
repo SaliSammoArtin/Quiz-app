@@ -5,11 +5,6 @@ import java.util.Scanner;
 public class QuizSelectHelper {
     public static QuizGame chooseQuiz() {
 
-        /* Right now we need to manually write a title of every new quiz in this menu.
-        But I think there is a solution to it:
-        This menu can be made better if we Implement Iquiz for Quizes we have, not for the
-        service.QuizGame, and make a getter method for the titles of the quizes. Then program can
-         Automatically get titles of quizes and we will not have to get it manually */
         System.out.println("\nChoose a quiz:");
         System.out.println("1. Animals Quiz");
         System.out.println("2. Sweden cities generic quiz");

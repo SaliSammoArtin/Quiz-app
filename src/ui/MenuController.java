@@ -1,8 +1,11 @@
 package ui;
 
 import interfaces.IQuiz;
+import model.scoreInstance;
+import repository.FileScoreRepository;
 import service.QuizSelectHelper;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MenuController {
@@ -30,6 +33,7 @@ public class MenuController {
     public void handleChoice() {
         System.out.println("Your choice: ");
         String input = scanner.nextLine();
+        FileScoreRepository repo = new FileScoreRepository();
 
         try {
             int choice = Integer.parseInt(input);
@@ -43,7 +47,12 @@ public class MenuController {
                     System.out.println("This option has not been implemented yet");
                     break;
                 case 3:
-                    System.out.println("This option isn't working atm");
+                    try {
+                        List<scoreInstance> entries = repo.loadScore(); //This loads the scoreboard
+                        repo.printScore(entries); // This prints the scoreboard
+                    } catch (Exception e) {
+                        System.out.println("Error loading scores: " + e.getMessage());
+                    }
                     break;
                 case 4:
                     running = false;

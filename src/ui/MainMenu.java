@@ -3,7 +3,7 @@ package ui;
 public enum MainMenu {
     OPTION_ONE(1,"Take a quiz"),
     OPTION_TWO(2,"Make a quiz"),
-    OPTION_THREE(3, "Your score"),
+    OPTION_THREE(3, "View scoreboard"),
     OPTION_FOUR(4,"Quit the game");
 
     private final int number;
