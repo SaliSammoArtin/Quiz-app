@@ -6,7 +6,7 @@ import service.QuizSelectHelper;
 import java.util.Scanner;
 
 public class MenuController {
-    private Scanner scanner;
+    private final Scanner scanner;
     private boolean running;
 
     public MenuController() {
@@ -32,7 +32,7 @@ public class MenuController {
         String input = scanner.nextLine();
 
         try {
-            int choice = Integer.parseInt(input);
+            int choice = Integer.parseInt(input.trim());
 
             switch (choice) {
                 case 1:

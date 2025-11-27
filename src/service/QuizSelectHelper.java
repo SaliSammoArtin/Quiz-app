@@ -18,9 +18,9 @@ public class QuizSelectHelper {
         while (true) {
             Scanner input = new Scanner(System.in);
             String userInput = input.nextLine();
-            int choice = -1;
+            int choice;
             try {
-                choice = Integer.parseInt(userInput); // try converting to int
+                choice = Integer.parseInt(userInput.trim()); // try converting to int
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input! Please enter a number.");
                 continue; // ask again if failed
@@ -33,7 +33,7 @@ public class QuizSelectHelper {
                     return new QuizGame(QuizManager.createGeneralQuiz());
                 default:
                     System.out.println("Invalid selection. Try again.");
-                    return chooseQuiz();
+
             }
         }
     }

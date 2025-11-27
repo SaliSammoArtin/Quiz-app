@@ -7,14 +7,16 @@ import java.util.Scanner;
 
 public class QuizGame implements IQuiz {
     private final ArrayList<IQuestion> questions;
+    private final Scanner scanner;
 
     public QuizGame(ArrayList<IQuestion> questions) {
         this.questions = questions;
+        this.scanner = new Scanner(System.in);
     }
 
     @Override
     public void start() {
-        Scanner input = new Scanner(System.in);
+
         int score = 0;
 
         System.out.println("\n--- Quiz begins! ---\n");
@@ -22,27 +24,50 @@ public class QuizGame implements IQuiz {
         for (int i = 0; i < questions.size(); i++) {
             IQuestion q = questions.get(i);
 
-            System.out.println("model.Question " + (i + 1) + " of " + questions.size());
+            System.out.println("Question " + (i + 1) + " of " + questions.size());
             System.out.println("--------------------");
 
             q.showQuestion();
-            System.out.print("Your answer: ");
-            String userAnswer = input.nextLine();
 
-            try {
-                int parsed = Integer.parseInt(userAnswer.trim());
-                if (q.checkAnswer(parsed)) {
-                    System.out.println("✔ Correct!\n");
-                    score++;
-                } else {
-                    System.out.println("✘ Wrong! The correct answer is: " + q.getCorrectAnswer() + "\n");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("✘ Invalid input. The correct answer is: " + q.getCorrectAnswer() + "\n");
+            int userAnswer = getValidIntInput();
+
+            if (userAnswer == -1) {
+                System.out.println("\n Quiz cancelled! Returning to main menu.");
+                return;
+            }
+
+            if (q.checkAnswer(userAnswer)) {
+                System.out.println("✔ Correct!\n");
+                score++;
+            } else {
+                System.out.println("✘ Wrong! The correct answer is: " + q.getCorrectAnswer() + "\n");
             }
         }
 
         showResult(score);
+    }
+
+    private int getValidIntInput() {
+        while (true) {
+            System.out.print("Your answer (1-4) or 'q' to quit: ");
+            String input = scanner.nextLine();
+
+            if (input.trim().equalsIgnoreCase("q")) {
+                return -1;
+            }
+            try {
+                int parsedInput = Integer.parseInt(input.trim());
+
+                if (parsedInput >= 1 && parsedInput <= 4) {
+                    return parsedInput;
+                }
+                else {
+                    System.out.println("Invalid choice. Pick a number between 1 and 4.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number (e.g., 1, 2, 3).");
+            }
+        }
     }
 
     private void showResult(int score) {
