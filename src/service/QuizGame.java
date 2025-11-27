@@ -37,7 +37,7 @@ public class QuizGame implements IQuiz {
 
             //if exit is chosen
             if (userAnswer == -1) {
-                System.out.println("\n Quiz cancelled! Returning to main menu.");
+                System.out.println("\nQuiz cancelled! Returning to main menu.");
                 return;
             }
 
