@@ -1,3 +1,4 @@
+package ui;
 
 public enum MainMenu {
     OPTION_ONE(1,"Take a quiz"),

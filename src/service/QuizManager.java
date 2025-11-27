@@ -1,3 +1,8 @@
+package service;
+
+import interfaces.IQuestion;
+import model.Question;
+
 import java.util.ArrayList;
 
 public class QuizManager {

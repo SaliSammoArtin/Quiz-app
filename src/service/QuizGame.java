@@ -1,3 +1,7 @@
+package service;// src/service.QuizGame.java
+import interfaces.IQuestion;
+import interfaces.IQuiz;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,6 +16,7 @@ public class QuizGame implements IQuiz {
 
     @Override
     public void start() {
+
         int score = 0;
 
         System.out.println("\n--- Quiz begins! ---\n");
