@@ -16,7 +16,7 @@ public class QuizSelectHelper {
         System.out.print("Write the number of your choice: ");
 
         while (true) {
-            Scanner input = new Scanner(System.in);
+            Scanner input = service.ScannerHelper.getScanner();
             String userInput = input.nextLine();
             int choice;
             try {

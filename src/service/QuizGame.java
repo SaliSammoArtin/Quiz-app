@@ -13,7 +13,7 @@ public class QuizGame implements IQuiz {
 
     public QuizGame(ArrayList<IQuestion> questions) {
         this.questions = questions;
-        this.scanner = new Scanner(System.in);
+        this.scanner = service.ScannerHelper.getScanner();
     }
 
     @Override
@@ -83,7 +83,7 @@ public class QuizGame implements IQuiz {
         System.out.println("Would you like to save your score in the scoreboard?");
         System.out.println("1. yes");
         System.out.println("2. no");
-        Scanner input = new Scanner(System.in);
+        Scanner input = service.ScannerHelper.getScanner();
         String userChoice = input.nextLine();
         if (userChoice.equals("1")) {
             while (true) {

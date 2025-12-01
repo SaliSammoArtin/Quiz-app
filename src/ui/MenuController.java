@@ -13,7 +13,7 @@ public class MenuController {
     private boolean running;
 
     public MenuController() {
-        this.scanner = new Scanner(System.in);
+        this.scanner = service.ScannerHelper.getScanner();
         this.running = true;
     }
 
@@ -27,7 +27,6 @@ public class MenuController {
             handleChoice();
         }
         System.out.println("Thanks for playing!");
-        scanner.close();
     }
 
     public void handleChoice() {
