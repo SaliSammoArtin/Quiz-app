@@ -61,7 +61,7 @@ public class FileScoreRepository implements IScoreRepository {
         List<scoreInstance> entries = new ArrayList<>();
 
         //Tries to read the file one line at a time, and separates parts by **
-        try (Scanner scanner = new Scanner(file)) {
+            try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] parts = line.split("\\s\\*\\*\\s");
