@@ -1,10 +1,11 @@
 package ui;
 
+//Main menu as an enum
 public enum MainMenu {
-    OPTION_ONE(1,"Take a quiz"),
-    OPTION_TWO(2,"Make a quiz"),
+    OPTION_ONE(1, "Take a quiz"),
+    OPTION_TWO(2, "Make a quiz"),
     OPTION_THREE(3, "View scoreboard"),
-    OPTION_FOUR(4,"Quit the game");
+    OPTION_FOUR(4, "Quit the game");
 
     private final int number;
     private final String description;
@@ -17,6 +18,8 @@ public enum MainMenu {
     public void print() {
         System.out.println(number + ". " + description);
     }
+
+    //Function to print main menu
     public static void printMainMenu() {
         System.out.println("~~~ QUIZ MENU ~~~");
         for (MainMenu menu : MainMenu.values()) {

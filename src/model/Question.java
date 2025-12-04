@@ -2,7 +2,7 @@ package model;
 
 import interfaces.IQuestion;
 
-// src/model.Question.java
+//Class to define how questions for the quiz look like
 public class Question implements IQuestion {
     private final String questionText;
     private final String[] alternatives;
@@ -15,6 +15,12 @@ public class Question implements IQuestion {
     }
 
     @Override
+    public int getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    //Method to show questions
+    @Override
     public void showQuestion() {
         System.out.println(questionText);
         for (int i = 0; i < alternatives.length; i++) {
@@ -22,13 +28,9 @@ public class Question implements IQuestion {
         }
     }
 
+    //Method to check if the answer is correct
     @Override
     public boolean checkAnswer(int answer) {
         return answer == correctAnswer;
-    }
-
-    @Override
-    public int getCorrectAnswer() {
-        return correctAnswer;
     }
 }
