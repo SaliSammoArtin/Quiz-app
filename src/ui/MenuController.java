@@ -1,9 +1,10 @@
 package ui;
 
 import interfaces.IQuiz;
+import model.ScoreInstance;
 import repository.FileScoreRepository;
 import service.QuizSelectHelper;
-import model.scoreInstance;
+
 
 import java.util.List;
 import java.util.Scanner;
@@ -32,7 +33,7 @@ public class MenuController {
 
     //Handle user´s choice
     public void handleChoice() {
-        System.out.println("Your choice: ");
+        System.out.print("Your choice: ");
         String input = scanner.nextLine();
         FileScoreRepository repo = new FileScoreRepository();
 
@@ -49,7 +50,7 @@ public class MenuController {
                     break;
                 case 3: // View Scoreboard
                     try {
-                        List<scoreInstance> entries = repo.loadScore(); //This loads the scoreboard
+                        List<ScoreInstance> entries = repo.loadScore(); //This loads the scoreboard
                         repo.printScore(entries); // This prints the scoreboard
                     } catch (Exception e) {
                         System.out.println("Error loading scores: " + e.getMessage());

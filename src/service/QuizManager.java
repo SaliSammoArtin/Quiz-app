@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class QuizManager {
 
-    //Animal quiz, 10 questions
+    // Generates the Animal quiz (10 questions)
     public static ArrayList<IQuestion> createAnimalQuiz() {
         ArrayList<IQuestion> list = new ArrayList<>();
 
@@ -19,7 +19,7 @@ public class QuizManager {
 
         list.add(new Question(
                 "Which animal can fly?",
-                new String[]{"Ostrich", "Penguin", "Falk", "Rat"},
+                new String[]{"Ostrich", "Penguin", "Falcon", "Rat"}, // Changed "Falk" to "Falcon"
                 3
         ));
 
@@ -74,12 +74,12 @@ public class QuizManager {
         return list;
     }
 
-    // Swedish cities quiz
+    // Generates the Swedish cities quiz
     public static ArrayList<IQuestion> createSwedishPlacesQuiz() {
         ArrayList<IQuestion> list = new ArrayList<>();
 
         list.add(new Question(
-                "The capital of Sweden?",
+                "What is the capital of Sweden?", // Added "What is" for a complete sentence
                 new String[]{"Göteborg", "Malmö", "Stockholm", "Uppsala"},
                 3
         ));
@@ -103,7 +103,7 @@ public class QuizManager {
         ));
 
         list.add(new Question(
-                "Which Swedish city is known for turning Torget into Liseberg?",
+                "Which Swedish city is home to the amusement park Liseberg?", // Clarified the question
                 new String[]{"Göteborg", "Malmö", "Stockholm", "Karlstad"},
                 1
         ));
