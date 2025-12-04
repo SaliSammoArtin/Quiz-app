@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class QuizManager {
 
+    //Animal quiz, 10 questions
     public static ArrayList<IQuestion> createAnimalQuiz() {
         ArrayList<IQuestion> list = new ArrayList<>();
 
@@ -73,7 +74,8 @@ public class QuizManager {
         return list;
     }
 
-    public static ArrayList<IQuestion> createGeneralQuiz() {
+    // Swedish cities quiz
+    public static ArrayList<IQuestion> createSwedishPlacesQuiz() {
         ArrayList<IQuestion> list = new ArrayList<>();
 
         list.add(new Question(

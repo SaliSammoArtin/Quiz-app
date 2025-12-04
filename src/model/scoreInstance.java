@@ -1,9 +1,11 @@
 package model;
 
+//Class to define how score instance looks
 public class scoreInstance {
     private final int score;
     private final String nickname;
     private final String timestamp; // can also use LocalDateTime if needed
+
 
     public scoreInstance(int score, String nickname, String timestamp) {
         this.score = score;
@@ -13,14 +15,6 @@ public class scoreInstance {
 
     public int getScore() {
         return score;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
     }
 
     @Override

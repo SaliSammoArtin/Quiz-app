@@ -5,33 +5,32 @@ import java.util.Scanner;
 public class QuizSelectHelper {
     public static QuizGame chooseQuiz() {
 
-        /* Right now we need to manually write a title of every new quiz in this menu.
-        But I think there is a solution to it:
-        This menu can be made better if we Implement Iquiz for Quizes we have, not for the
-        service.QuizGame, and make a getter method for the titles of the quizes. Then program can
-         Automatically get titles of quizes and we will not have to get it manually */
+        //Choose the available quiz menu
         System.out.println("\nChoose a quiz:");
         System.out.println("1. Animals Quiz");
         System.out.println("2. Sweden cities generic quiz");
         System.out.print("Write the number of your choice: ");
 
         while (true) {
+            //Get input
             Scanner input = service.ScannerHelper.getScanner();
             String userInput = input.nextLine();
             int choice;
             try {
-                choice = Integer.parseInt(userInput.trim()); // try converting to int
+                // try converting to int
+                choice = Integer.parseInt(userInput.trim());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input! Please enter a number.");
                 continue; // ask again if failed
             }
 
             switch (choice) {
-                case 1:
+
+                case 1: //Animal quiz
                     return new QuizGame(QuizManager.createAnimalQuiz());
-                case 2:
-                    return new QuizGame(QuizManager.createGeneralQuiz());
-                default:
+                case 2: //Swedish places
+                    return new QuizGame(QuizManager.createSwedishPlacesQuiz());
+                default: //Invalid choice
                     System.out.println("Invalid selection. Try again.");
 
             }
