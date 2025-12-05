@@ -1,3 +1,6 @@
+## 🛠 Repository for Scrum dokumentation
+https://github.com/Snwrn/Grupp-4---dokumentation
+
 ---
 ## 🛠 Vårt Arbetssätt (Way of Working)
 
