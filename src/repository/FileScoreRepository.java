@@ -1,6 +1,7 @@
 package repository;
 
-import model.scoreInstance;
+import model.ScoreInstance;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -47,7 +48,7 @@ public class FileScoreRepository implements IScoreRepository {
     }
 
     @Override
-    public List<scoreInstance> loadScore() throws FileNotFoundException {
+    public List<ScoreInstance> loadScore() throws FileNotFoundException {
         //Finds folder and the txt file, in there is no file, gives error message and returns
         File folder = new File("score");
         File file = new File(folder, "score.txt");
@@ -58,7 +59,7 @@ public class FileScoreRepository implements IScoreRepository {
         }
 
         //Creates an empty(so far) list of score entries
-        List<scoreInstance> entries = new ArrayList<>();
+        List<ScoreInstance> entries = new ArrayList<>();
 
         //Tries to read the file one line at a time, and separates parts by **
         try (Scanner scanner = new Scanner(file)) {
@@ -66,7 +67,7 @@ public class FileScoreRepository implements IScoreRepository {
                 String line = scanner.nextLine();
                 String[] parts = line.split("\\s\\*\\*\\s");
 
-                //If the parts are less than 3 or more, something is worng so gives error
+                //If the parts are less than 3 or more, something is wrong so gives error
                 if (parts.length != 3) {
                     System.out.println("Skipping invalid line: " + line);
                     continue;
@@ -85,7 +86,7 @@ public class FileScoreRepository implements IScoreRepository {
                 String nickname = parts[1].trim();
                 String timestamp = parts[2].trim();
 
-                entries.add(new scoreInstance(score, nickname, timestamp));
+                entries.add(new ScoreInstance(score, nickname, timestamp));
             }
         }
 
@@ -96,12 +97,12 @@ public class FileScoreRepository implements IScoreRepository {
     }
 
     //Prints scoreboard for the user
-    public void printScore(List<scoreInstance> entries) {
+    public void printScore(List<ScoreInstance> entries) {
         System.out.println("----- Scoreboard -----");
         if (entries.isEmpty()) {
             System.out.println("No scores yet.");
         } else {
-            for (scoreInstance entry : entries) {
+            for (ScoreInstance entry : entries) {
                 System.out.println(entry);
             }
         }

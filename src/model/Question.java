@@ -2,7 +2,7 @@ package model;
 
 import interfaces.IQuestion;
 
-//Class to define how questions for the quiz look like
+// Class representing a quiz question
 public class Question implements IQuestion {
     private final String questionText;
     private final String[] alternatives;
@@ -19,7 +19,7 @@ public class Question implements IQuestion {
         return correctAnswer;
     }
 
-    //Method to show questions
+    // Method to display the question
     @Override
     public void showQuestion() {
         System.out.println(questionText);
@@ -28,7 +28,7 @@ public class Question implements IQuestion {
         }
     }
 
-    //Method to check if the answer is correct
+    // Method to check if the answer is correct
     @Override
     public boolean checkAnswer(int answer) {
         return answer == correctAnswer;

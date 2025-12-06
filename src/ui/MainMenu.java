@@ -19,7 +19,7 @@ public enum MainMenu {
         System.out.println(number + ". " + description);
     }
 
-    //Function to print main menu
+    //Method to display main menu
     public static void printMainMenu() {
         System.out.println("~~~ QUIZ MENU ~~~");
         for (MainMenu menu : MainMenu.values()) {

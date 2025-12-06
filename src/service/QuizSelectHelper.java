@@ -9,7 +9,7 @@ public class QuizSelectHelper {
         System.out.println("\nChoose a quiz:");
         System.out.println("1. Animals Quiz");
         System.out.println("2. Sweden cities generic quiz");
-        System.out.print("Write the number of your choice: ");
+        System.out.print("Enter the number of your choice: ");
 
         while (true) {
             //Get input
@@ -17,7 +17,7 @@ public class QuizSelectHelper {
             String userInput = input.nextLine();
             int choice;
             try {
-                // try converting to int
+                // Try converting to int
                 choice = Integer.parseInt(userInput.trim());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input! Please enter a number.");
